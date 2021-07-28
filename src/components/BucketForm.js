@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaAngleDown } from "react-icons/fa";  
+// import 'bulma/css/bulma.css'
 
 function BucketForm(props) {
   const [input, setInput] = useState('');
@@ -29,6 +31,8 @@ function BucketForm(props) {
     setInput(e.target.value);
   };
 
+  console.log('props', props);
+
   // First we check to see if "edit" prop exists. If not, we render the normal form
   // If the prop "edit" exists, we know to render the update form instead
   return !props.edit ? (
@@ -43,8 +47,11 @@ function BucketForm(props) {
           onChange={handleChange}
         ></input>
         <div className="dropdown">
-          <button className={`dropbtn ${eagerness}`}>
+          <button className={`dropbtn ${eagerness} is-flex`}>
             {eagerness || 'Priority'}
+            <span class="icon is-small pl-2">
+              <FaAngleDown />
+            </span>
           </button>
           <div className="dropdown-content">
             {/* TODO: Add an onClick event that will set the corresponding eagerness level from the `eagernessLevel` array */}
@@ -53,7 +60,7 @@ function BucketForm(props) {
             <p onClick={() => setEagerness(eagernessLevel[2])}>Take it or leave it</p>
           </div>
         </div>
-        <button className="bucket-button">Add bucket list item</button>
+        <button className="bucket-button is-primary">Add bucket list item</button>
       </form>
     </div>
   ) : (

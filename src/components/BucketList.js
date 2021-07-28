@@ -84,7 +84,7 @@ function BucketList() {
 
   return (
     <div>
-      <h1>What is on your bucket list?</h1>
+      <h1 className="is-size-4">What is on your bucket list?</h1>
       <BucketForm onSubmit={addBucketItem} />
       <Bucket
         bucket={bucket}
