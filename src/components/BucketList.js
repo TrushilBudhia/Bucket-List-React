@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BucketForm from './BucketForm';
 import Bucket from './Bucket';
 
 function BucketList() {
-  const [bucket, setBucket] = useState([]);
+  // Gets the saved items from local storage
+  const saveditems = JSON.parse(localStorage.getItem('items'));
+  const [bucket, setBucket] = useState(saveditems || []);
 
   // Function to add a bucket list item
   const addBucketItem = (item) => {
@@ -66,6 +68,19 @@ function BucketList() {
       prev.map((item) => (item.id === itemId ? newValue : item))
     );
   };
+
+  // useEffect hook used to save and get items from local storage
+  // The items the user inputs to the list will persist
+  useEffect(() => {
+    const bucket = JSON.parse(localStorage.getItem('items'));
+    if (bucket) {
+      setBucket(bucket);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(bucket));
+  }, [bucket]);
 
   return (
     <div>
