@@ -9,16 +9,34 @@ function BucketList() {
   const addBucketItem = (item) => {
 
     // TODO: Write logic to add the new bucket item to the bucket state variable
-    
+    setBucket([...bucket, item]);
   };
 
   // Function to mark bucket list item as complete
   const completeBucketItem = (id) => {
     // If the ID passed to this function matches the ID of the item that was clicked, mark it as complete
     let updatedBucket = bucket.map((item) => {
-      
-      // TODO: Write logic that marks an item as complete or incomplete when invoked
 
+      // TODO: Write logic that marks an item as complete or incomplete when invoked
+      if (id === item.id) {
+        if (item.status !== 'complete') {
+          return {
+            id: item.id,
+            text: item.text,
+            eagerness: item.eagerness,
+            status: 'complete'
+          }
+        } else {
+          return {
+            id: item.id,
+            text: item.text,
+            eagerness: item.eagerness,
+            status: 'incomplete'
+          }
+        }
+      } else {
+        return item;
+      }
     });
 
     setBucket(updatedBucket);
