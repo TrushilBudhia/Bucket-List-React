@@ -45,18 +45,21 @@ function BucketList() {
   // Function to remove bucket list item and update state
   const removeBucketItem = (id) => {
     // TODO: Write logic that will return an array of items that don't contain the ID passed to this function
-
-
+    const itemsToRemoveFromBucket = bucket.filter(item => item.id !== id);
     // TODO: Update the bucket state variable
+    setBucket(itemsToRemoveFromBucket);
   };
 
   // Function to edit the bucket list item
   const editBucketItem = (itemId, newValue) => {
     // Make sure that the value isn't empty
+    console.log('itemId', itemId);
+    console.log('newValue', newValue.text);
     if (!newValue.text) {
+      console.log('no new Value text');
       return;
     }
-
+    console.log('Did not enter if statement');
     // We use the "prev" argument provided with the useState hook to map through our list of items
     // We then check to see if the item ID matches the id of the item that was clicked and if so, we set it to a new value
     setBucket((prev) =>
