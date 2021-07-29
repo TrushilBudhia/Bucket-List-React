@@ -9,8 +9,11 @@ function BucketList() {
 
   // Function to add a bucket list item
   const addBucketItem = (item) => {
+    if (!item.text) {
+      return;
+    }
 
-    // TODO: Write logic to add the new bucket item to the bucket state variable
+    // Adds the new bucket item to the bucket state variable
     setBucket([...bucket, item]);
   };
 
@@ -19,44 +22,26 @@ function BucketList() {
     // If the ID passed to this function matches the ID of the item that was clicked, mark it as complete
     let updatedBucket = bucket.map((item) => {
 
-      // TODO: Write logic that marks an item as complete or incomplete when invoked
-      if (id === item.id) {
-        if (item.status !== 'complete') {
-          return {
-            id: item.id,
-            text: item.text,
-            eagerness: item.eagerness,
-            status: 'complete'
-          }
-        } else {
-          return {
-            id: item.id,
-            text: item.text,
-            eagerness: item.eagerness,
-            status: 'incomplete'
-          }
-        }
-      } else {
-        return item;
+      // Marks an item as complete or incomplete when invoked
+      if (item.id === id) {
+        item.isComplete = !item.isComplete;
       }
+      return item;
     });
-
     setBucket(updatedBucket);
   };
 
   // Function to remove bucket list item and update state
   const removeBucketItem = (id) => {
-    // TODO: Write logic that will return an array of items that don't contain the ID passed to this function
-    const itemsToRemoveFromBucket = bucket.filter(item => item.id !== id);
-    // TODO: Update the bucket state variable
+    // Returns an array of items that don't contain the ID passed to this function
+    const itemsToRemoveFromBucket = [...bucket].filter((item) => item.id !== id);
+    // Bucket state variable updated
     setBucket(itemsToRemoveFromBucket);
   };
 
   // Function to edit the bucket list item
-  const editBucketItem = (itemId, newValue) => {
+  const editBucketItem = (itemId, newValue, eagernessLevel) => {
     // Make sure that the value isn't empty
-    console.log('itemId', itemId);
-    console.log('newValue', newValue.text);
     if (!newValue.text) {
       console.log('no new Value text');
       return;
