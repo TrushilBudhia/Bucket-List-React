@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Bucket List",
+  "name": "Bucket List React",
   "icons": [
     {
       "src": "favicon.ico",
