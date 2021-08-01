@@ -7,13 +7,10 @@ function Bucket(props) {
     value: '',
     eagerness: '',
   });
-  console.log('edit', edit);
-  console.log('props.bucket', props.bucket);
 
   const submitUpdate = (value) => {
     // TODO: Write logic to update the `edit` value in state after a user updates an entry in the list
     // TODO: Set the key:value pairs in the `edit` object back to empty strings
-    console.log('value2', value);
     props.editBucketItem(edit.id, value);
     setEdit({
       id: null,
@@ -24,7 +21,6 @@ function Bucket(props) {
 
   // If the user is attempting to edit an item, render the bucket form with the edit variable passed as a prop
   if (edit.id) {
-    console.log('Edit if statement entered');
     return <BucketForm edit={edit} onSubmit={submitUpdate} />;
   }
 

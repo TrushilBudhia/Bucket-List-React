@@ -43,10 +43,8 @@ function BucketList() {
   const editBucketItem = (itemId, newValue, eagernessLevel) => {
     // Make sure that the value isn't empty
     if (!newValue.text) {
-      console.log('no new Value text');
       return;
     }
-    console.log('Did not enter if statement');
     // We use the "prev" argument provided with the useState hook to map through our list of items
     // We then check to see if the item ID matches the id of the item that was clicked and if so, we set it to a new value
     setBucket((prev) =>
