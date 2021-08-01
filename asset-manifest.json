@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Bucket-List-React/static/css/main.fc77098d.chunk.css",
-    "main.js": "/Bucket-List-React/static/js/main.211df019.chunk.js",
-    "main.js.map": "/Bucket-List-React/static/js/main.211df019.chunk.js.map",
+    "main.js": "/Bucket-List-React/static/js/main.77c0c80b.chunk.js",
+    "main.js.map": "/Bucket-List-React/static/js/main.77c0c80b.chunk.js.map",
     "runtime-main.js": "/Bucket-List-React/static/js/runtime-main.13ee723b.js",
     "runtime-main.js.map": "/Bucket-List-React/static/js/runtime-main.13ee723b.js.map",
     "static/css/2.847439e0.chunk.css": "/Bucket-List-React/static/css/2.847439e0.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.847439e0.chunk.css",
     "static/js/2.59f533a4.chunk.js",
     "static/css/main.fc77098d.chunk.css",
-    "static/js/main.211df019.chunk.js"
+    "static/js/main.77c0c80b.chunk.js"
   ]
 }
